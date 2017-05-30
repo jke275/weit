@@ -1,0 +1,4 @@
+services:
+#    weit_clientes.example:
+#        class: WEIT\ClientesBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

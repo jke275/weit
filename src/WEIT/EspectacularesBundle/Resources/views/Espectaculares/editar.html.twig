@@ -1,0 +1,51 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			<div class="col-md-6">
+				<div class="page-header">
+					<h2>Editar Espectacular</h2>
+				</div>
+				{{ form_start(form, {'attr' : {'novalidate' : 'novalidate', 'role' : 'form'}}) }}
+					<div class="form-group">
+						{{ form_label(form.calle) }}
+						{{ form_widget(form.calle, {'attr' : {'class' : 'form-control', 'placeholder' : 'Calle'}})}}
+						<span class="text-danger">{{ form_errors(form.calle) }}</span>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.numero) }}
+						{{ form_widget(form.numero, {'attr' : {'class' : 'form-control', 'placeholder' : 'Número'}})}}
+						<span class="text-danger">{{ form_errors(form.numero) }}</span>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.largo) }}
+						{{ form_widget(form.largo, {'attr' : {'class' : 'form-control', 'placeholder' : 'Largo en centimetros'}})}}
+						<span class="text-danger">{{ form_errors(form.largo) }}</span>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.ancho) }}
+						{{ form_widget(form.ancho, {'attr' : {'class' : 'form-control', 'placeholder' : 'Ancho en centimetros'}})}}
+						<span class="text-danger">{{ form_errors(form.ancho) }}</span>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.estado) }}
+						{{ form_widget(form.estado, {'attr' : {'class' : 'form-control', 'placeholder' : 'Estado'}})}}
+						<span class="text-danger">{{ form_errors(form.estado) }}</span>
+					</div>
+					<div class="checkbox">
+						<label>
+							{{ form_widget(form.isActive) }}Activo
+							<span class="text-danger">{{ form_errors(form.isActive) }}</span>
+						</label>
+					</div>
+					<p>
+						{{ form_widget(form.save, {'label' : 'Guardar Cambios'}) }}
+					</p>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

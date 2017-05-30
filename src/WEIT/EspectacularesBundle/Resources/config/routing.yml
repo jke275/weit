@@ -1,0 +1,47 @@
+weit_espectaculares_index:
+    path:    /index
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:index}
+
+weit_espectaculares_vendidos:
+    path:    /vendidos
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:vendidos}
+
+weit_espectaculares_agregar:
+    path:    /agregar
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:agregar}
+
+weit_espectaculares_ver:
+    path:    /ver/{id}
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:ver}
+
+weit_espectaculares_editar:
+    path:    /editar/{id}
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:editar}
+
+weit_espectaculares_crear:
+    path:    /crear/
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:crear}
+    methods: POST
+
+weit_espectaculares_update:
+    path:    /update/{id}
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:update}
+    methods: [POST, PUT]
+
+weit_espectaculares_delete:
+    path:    /delete/{id}
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:delete}
+    methods: [POST, DELETE]
+
+weit_espectaculares_disponibles:
+    path:    /disponibles/{cliente}
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:disponibles}
+
+weit_espectaculares_comprar:
+    path:    /comprar/{cliente}/{espec}
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:comprar}
+
+weit_espectaculares_pagar:
+    path:    /pagar/{espec}/{cliente}
+    defaults:  {_controller: WEITEspectacularesBundle:Espectaculares:pagar}
+    methods: POST

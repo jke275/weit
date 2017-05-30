@@ -1,0 +1,64 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="container well">
+		<div class="col-md-9">
+			<h2>Espectacular</h2>
+			<br>
+			<dl>
+				<dt>Calle</dt>
+				<dd>
+					{{ espectacular.calle }}
+					&nbsp;
+				</dd>
+				<br>
+
+				<dt>Número</dt>
+				<dd>
+					{{ espectacular.numero }}
+					&nbsp;
+				</dd>
+				<br>
+
+				<dt>Largo</dt>
+				<dd>
+					{{ espectacular.largo }} cm
+					&nbsp;
+				</dd>
+				<br>
+
+				<dt>Ancho</dt>
+				<dd>
+					{{ espectacular.ancho }} cm
+					&nbsp;
+				</dd>
+				<br>
+
+				<dt>Activo</dt>
+				<dd>
+					{% if espectacular.isActive %}
+						Activo
+					{% else %}
+						No Activo
+					{% endif %}
+					&nbsp;
+				</dd>
+				<br>
+			</dl>
+		</div>
+		<div class="col-md-3">
+			<h3>Acciones</h3>
+			<p>
+				<a href="{{ path('weit_espectaculares_editar', { id: espectacular.id }) }}" class="btn btn-primary btn-lg btn-block">
+					<span class="glyphicon glyphicon-edit"></span>
+					Editar
+				</a>
+			</p>
+			<p>
+				{{ include('WEITEspectacularesBundle:Espectaculares:forms/form.html.twig', {form: delete_form, message: '¿Estás seguro?'|trans }) }}
+			</p>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+emm_user_personal:
+    resource: "@WEITPersonalBundle/Resources/config/routes/personal.yml"
+    prefix:   /personal
+
+
+
+weit_personal_homepage:
+    path:    /
+    defaults: { _controller: WEITPersonalBundle:Personal:home }
+
+weit_personal_login:
+    path:    /login
+    defaults:  {_controller: WEITPersonalBundle:Security:login}
+
+weit_personal_login_check:
+    path:    /login_check
+    defaults:  {_controller: WEITPersonalBundle:Security:loginCheck}
+    methods: POST
+
+weit_personal_logout:
+    path:    /logout

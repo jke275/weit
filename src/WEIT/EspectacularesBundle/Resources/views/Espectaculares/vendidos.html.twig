@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	{{ include('WEITPersonalBundle:Personal:mensajes/success.html.twig') }}
+	<div class="container">
+		<dv class="col-md-12">
+			<div class="page-header marggin-none">
+				<h2 class="padding-none">Espectaculares</h2>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Cliente</th>
+							<th>Calle Espectacular</th>
+							<th>Fecha inicio</th>
+							<th>Fecha Fin</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for espectacular in espectaculares %}
+							<tr>
+								<td>{{ espectacular.clientes.nombre|capitalize }} {{ espectacular.clientes.apellidos|capitalize }}</td>
+								<td>{{ espectacular.espectaculares.calle|capitalize }} #{{ espectacular.espectaculares.numero }}</td>
+								<td>{{ espectacular.fechaInicio|date('d-m-Y')}} </td>
+								<td>{{ espectacular.fechaFin|date('d-m-Y') }}</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</dv>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('bundles/emmuser/js/delete-user.js') }}"></script>
+{% endblock %}

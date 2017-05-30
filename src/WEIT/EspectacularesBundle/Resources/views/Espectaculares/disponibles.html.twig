@@ -1,0 +1,40 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	{{ include('WEITPersonalBundle:Personal:mensajes/success.html.twig') }}
+	<div class="container">
+		<dv class="col-md-12">
+			<div class="page-header marggin-none">
+				<h2 class="padding-none">Espectaculares</h2>
+			</div>
+			<div class="table-responsive">
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Dirección</th>
+							<th>Dimenciones</th>
+							<th>Activo</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for espectacular in users %}
+							<tr>
+								<td>{{ espectacular.calle|capitalize }} #{{ espectacular.numero }} </td>
+								<td>{{ espectacular.largo|capitalize }}x{{ espectacular.ancho|capitalize }} cm </td>
+								<td class="actions">
+									<a href="{{ path('weit_espectaculares_comprar', {'cliente': cliente, espec: espectacular.id}) }}" class="btn btn-sm btn-info">Comprar</a>
+								</td>
+							</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+			</div>
+		</dv>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('bundles/emmuser/js/delete-user.js') }}"></script>
+{% endblock %}

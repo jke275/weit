@@ -1,0 +1,15 @@
+weit_espectaculares:
+    resource: "@WEITEspectacularesBundle/Resources/config/routing.yml"
+    prefix:   /espectaculares
+
+weit_clientes:
+    resource: "@WEITClientesBundle/Resources/config/routing.yml"
+    prefix:   /clientes
+
+weit_personal:
+    resource: "@WEITPersonalBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

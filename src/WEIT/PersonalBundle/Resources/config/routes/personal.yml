@@ -1,0 +1,30 @@
+weit_personal_index:
+    path:    /index
+    defaults:  {_controller: WEITPersonalBundle:Personal:index}
+
+weit_personal_agregar:
+    path:    /agregar
+    defaults:  {_controller: WEITPersonalBundle:Personal:agregar}
+
+weit_personal_ver:
+    path:    /ver/{id}
+    defaults:  {_controller: WEITPersonalBundle:Personal:ver}
+
+weit_personal_editar:
+    path:    /editar/{id}
+    defaults:  {_controller: WEITPersonalBundle:Personal:editar}
+
+weit_personal_crear:
+    path:    /crear/
+    defaults:  {_controller: WEITPersonalBundle:Personal:crear}
+    methods: POST
+
+weit_personal_update:
+    path:    /update/{id}
+    defaults:  {_controller: WEITPersonalBundle:Personal:update}
+    methods: [POST, PUT]
+
+weit_personal_delete:
+    path:    /delete/{id}
+    defaults:  {_controller: WEITPersonalBundle:Personal:delete}
+    methods: [POST, DELETE]

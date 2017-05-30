@@ -1,0 +1,89 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    {{ parent() }}
+
+	<div class="container well">
+		<div class="col-md-6">
+			<h2>Cliente</h2>
+			<br>
+			<dl>
+				<dt>Nombre</dt>
+				<dd>
+					{{ cliente.Nombre|capitalize }}
+					&nbsp;
+				</dd>
+
+				<dt>Apellidos</dt>
+				<dd>
+					{{ cliente.Apellidos|capitalize }}
+					&nbsp;
+				</dd>
+				<dt>Correo</dt>
+				<dd>
+					{{ cliente.Correo }}
+					&nbsp;
+				</dd>
+				<dt>Telefono</dt>
+				<dd>
+					{{ cliente.Telefono }}
+					&nbsp;
+				</dd>
+			</dl>
+		</div>
+		<div class="col-md-6">
+			<div class="col-md-9">
+			<h2>Espectacular</h2>
+			<br>
+			<dl>
+				<dt>Calle</dt>
+				<dd>
+					{{ espectacular.calle|capitalize }}
+					&nbsp;
+				</dd>
+				<dt>Número</dt>
+				<dd>
+					{{ espectacular.numero }}
+					&nbsp;
+				</dd>
+				<dt>Largo</dt>
+				<dd>
+					{{ espectacular.largo }} cm
+					&nbsp;
+				</dd>
+				<dt>Ancho</dt>
+				<dd>
+					{{ espectacular.ancho }} cm
+					&nbsp;
+				</dd>
+			</dl>
+		</div>
+	</div>
+
+
+	<div class="main container">
+		<div class="row well">
+			<div class="col-md-6">
+				{{ form_start(form, {'attr': {'novalidate': 'novalidate', 'role' : 'form'}}) }}
+				    <h4 class="text-danger">{{ form_errors(form) }}</h4>
+					    <div class="form-group">
+					        {{ form_label(form.fechaInicio) }}
+					        {{ form_widget(form.fechaInicio, {'attr': {'class': 'form-control', 'type': 'date' , 'placeholder' : 'Task title'}}) }}
+					        <span class="text-danger">{{ form_errors(form.fechaInicio) }}</span>
+					    </div>
+					     <div class="form-group">
+					        {{ form_label(form.fechaFin) }}
+					        {{ form_widget(form.fechaFin, {'attr': {'class': 'form-control', 'type': 'date' , 'placeholder' : 'Task title'}}) }}
+					        <span class="text-danger">{{ form_errors(form.fechaFin) }}</span>
+					    </div>
+
+
+				    <p>
+				        {{ form_widget(form.save, {'label' : 'Comprar', 'attr': {'class': 'btn btn-success'}}) }}
+				    </p>
+
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

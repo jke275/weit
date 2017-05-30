@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+	{{ parent() }}
+	<div class="main container">
+		<div class="row well">
+			<div class="col-md-6">
+				<div class="page-header">
+					<h2>Editar Cliente</h2>
+				</div>
+				{{ form_start(form, {'attr' : {'novalidate' : 'novalidate', 'role' : 'form'}}) }}
+					<div class="form-group">
+						{{ form_label(form.nombre) }}
+						{{ form_widget(form.nombre, {'attr' : {'class' : 'form-control', 'placeholder' : 'Tu nombre'}})}}
+						<span class="text-danger">{{ form_errors(form.nombre) }}</span>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.apellidos) }}
+						{{ form_widget(form.apellidos, {'attr' : {'class' : 'form-control', 'placeholder' : 'Tu appelido'}})}}
+						<span class="text-danger">{{ form_errors(form.apellidos) }}</span>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.correo) }}
+						{{ form_widget(form.correo, {'attr' : {'class' : 'form-control', 'placeholder' : 'Tu correo'}})}}
+						<span class="text-danger">{{ form_errors(form.correo) }}</span>
+					</div>
+					<div class="form-group">
+						{{ form_label(form.telefono) }}
+						{{ form_widget(form.telefono, {'attr' : {'class' : 'form-control', 'placeholder' : 'Tu telefono'}})}}
+						<span class="text-danger">{{ form_errors(form.telefono) }}</span>
+					</div>
+					<p>
+						{{ form_widget(form.save, {'label' : 'Guardar Cambios'}) }}
+					</p>
+				{{ form_end(form) }}
+			</div>
+		</div>
+	</div>
+
+
+{% endblock %}
