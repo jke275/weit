@@ -144,7 +144,7 @@ class PersonalController extends Controller
                 return $this->redirectToRoute('weit_personal_index', array('id' => $personal->getId()));
             }
 
-            return $this->render('EMMUserBundle:User:edit.html.twig', array('user' => $personal, 'form' => $form->createView()));
+            return $this->render('WEITPersonalBundle:Personal:editar.html.twig', array('user' => $personal, 'form' => $form->createView()));
     }
 
     public function recoverPass($id)
@@ -209,18 +209,6 @@ class PersonalController extends Controller
 
             if($form->isSubmitted() && $form->isValid())
             {
-
-                if($request->isXMLHttpRequest())
-                {
-                    $res = $this->deleteUser($user->getRole(), $em, $user);
-
-                    return new Response(
-                        json_encode(array('removed' =>$res['removed'], 'message' => $res['message'], 'countUsers' => $countUsers)),
-                        200,
-                        array('Content-Type' => 'application/json')
-                    );
-                }
-
                 $res = $this->deleteUser($user->getRole(), $em, $user);
 
                 $this->addFlash($res['alert'], $res['message']);
@@ -239,7 +227,7 @@ class PersonalController extends Controller
             $removed = 1;
             $alert = 'mensaje';
         }
-        elseif($role = 'ROLE_ADMIN')
+        elseif($role == 'ROLE_ADMIN')
         {
             $message = $this->get('translator')->trans('The user could not be deleted');
             $removed = 0;

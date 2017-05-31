@@ -34,6 +34,37 @@
 						{{ form_widget(form.role, {'attr' : {'class' : 'form-control', 'placeholder' : 'Your role'}})}}
 						<span class="text-danger">{{ form_errors(form.role) }}</span>
 					</div>
+					<div class="form-group">
+						{{ form_label(form.role) }}
+						{{ form_widget(form.role, {'attr' : {'class' : 'form-control', 'placeholder' : 'Your role'}})}}
+						<span class="text-danger">{{ form_errors(form.role) }}</span>
+					</div>
+					Selecciona los privilegios que tendrá el personal
+					<div class="checkbox">
+						<label>
+							{{ form_widget(form.crear) }}Crear
+							<span class="text-danger">{{ form_errors(form.crear) }}</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							{{ form_widget(form.borrar) }}Borrar
+							<span class="text-danger">{{ form_errors(form.borrar) }}</span>
+						</label>
+					</div>
+					<div class="checkbox">
+						<label>
+							{{ form_widget(form.editar) }}Editar
+							<span class="text-danger">{{ form_errors(form.editar) }}</span>
+						</label>
+					</div>
+					<br>
+					<div class="checkbox">
+						<label>
+							{{ form_widget(form.isActive) }}Activo
+							<span class="text-danger">{{ form_errors(form.isActive) }}</span>
+						</label>
+					</div>
 					<p>
 						{{ form_widget(form.save, {'label' : 'Guardar Cambios'}) }}
 					</p>

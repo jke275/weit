@@ -53,7 +53,7 @@ class Personal implements AdvancedUserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="role", type="string", length=50)
+     * @ORM\Column(name="role", type="string", columnDefinition="ENUM('ROLE_ADMIN', 'ROLE_COMERCIAL')", length=50)
      *@Assert\NotBlank()
      */
     private $role;
@@ -61,8 +61,7 @@ class Personal implements AdvancedUserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="password", type="string", columnDefinition="ENUM('ROLE_ADMIN', 'ROLE_COMERCIAL')", length=100)
-     *@Assert\NotBlank()
+     * @ORM\Column(name="password", type="string", length=100)
      */
     private $password;
 
@@ -70,7 +69,6 @@ class Personal implements AdvancedUserInterface, \Serializable
      * @var boolean
      *
      * @ORM\Column(name="isActive", type="boolean")
-     *@Assert\NotBlank()
      */
     private $isActive;
 
@@ -78,7 +76,6 @@ class Personal implements AdvancedUserInterface, \Serializable
      * @var boolean
      *
      * @ORM\Column(name="crear", type="boolean")
-     *@Assert\NotBlank()
      */
     private $crear;
 
@@ -86,7 +83,6 @@ class Personal implements AdvancedUserInterface, \Serializable
      * @var boolean
      *
      * @ORM\Column(name="editar", type="boolean")
-     *@Assert\NotBlank()
      */
     private $editar;
 
@@ -94,7 +90,6 @@ class Personal implements AdvancedUserInterface, \Serializable
      * @var boolean
      *
      * @ORM\Column(name="borrar", type="boolean")
-     *@Assert\NotBlank()
      */
     private $borrar;
 
